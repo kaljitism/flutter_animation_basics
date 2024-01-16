@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animation_basics/3d_cube_animation.dart';
 import 'package:flutter_animation_basics/chained_animation.dart';
 import 'package:flutter_animation_basics/implicit_rotateY_animation.dart';
 
@@ -39,6 +40,17 @@ class _MyRouterState extends State<MyRouter> {
               );
             },
             title: const Text('Chained Animation'),
+          ),
+          ListTile(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const ThreeDCubeAnimation(),
+                ),
+              );
+            },
+            title: const Text('3D Cube Animation'),
           ),
         ],
       ),
