@@ -17,7 +17,6 @@ class _ImplicitRotateYAnimationState extends State<ImplicitRotateYAnimation>
 
   @override
   void initState() {
-    super.initState();
     _controller = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 2),
@@ -27,6 +26,7 @@ class _ImplicitRotateYAnimationState extends State<ImplicitRotateYAnimation>
       end: 2 * pi,
     ).animate(_controller);
     _controller.repeat();
+    super.initState();
   }
 
   @override
