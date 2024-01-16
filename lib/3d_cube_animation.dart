@@ -113,7 +113,7 @@ class _ThreeDCubeAnimationState extends State<ThreeDCubeAnimation>
                       child: Container(
                         width: widthAndHeight,
                         height: widthAndHeight,
-                        color: Colors.yellow,
+                        color: Colors.orange,
                       ),
                     ),
                     // Right Face

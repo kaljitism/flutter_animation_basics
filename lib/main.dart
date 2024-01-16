@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animation_basics/3d_cube_animation.dart';
+import 'package:flutter_animation_basics/my_router.dart';
 
 void main() {
   runApp(const MyAnimationApp());
@@ -13,8 +13,8 @@ class MyAnimationApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Animation App',
-      theme: ThemeData.dark(),
-      home: const ThreeDCubeAnimation(),
+      theme: ThemeData.dark(useMaterial3: true),
+      home: const MyRouter(),
     );
   }
 }
