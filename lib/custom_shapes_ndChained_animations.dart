@@ -9,17 +9,88 @@ class CustomShapesAnimation extends StatefulWidget {
   State<CustomShapesAnimation> createState() => _CustomShapesAnimationState();
 }
 
-class _CustomShapesAnimationState extends State<CustomShapesAnimation> {
+class _CustomShapesAnimationState extends State<CustomShapesAnimation>
+    with TickerProviderStateMixin {
+  late AnimationController _sidesController;
+  late Animation<int> _sidesAnimation;
+
+  late AnimationController _scaleController;
+  late Animation<double> _scaleAnimation;
+  late AnimationController _rotationController;
+  late Animation<double> _rotationAnimation;
+
+  @override
+  void initState() {
+    super.initState();
+    _sidesController = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 3),
+    );
+    _sidesAnimation = IntTween(
+      begin: 3,
+      end: 10,
+    ).animate(_sidesController);
+
+    _scaleController = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 3),
+    );
+    _scaleAnimation = Tween(
+      begin: 50.0,
+      end: 400.0,
+    ).chain(CurveTween(curve: Curves.bounceInOut)).animate(_scaleController);
+
+    _rotationController = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 3),
+    );
+    _rotationAnimation = Tween<double>(
+      begin: 0,
+      end: 2 * pi,
+    ).chain(CurveTween(curve: Curves.easeInOut)).animate(_rotationController);
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _sidesController.repeat(reverse: true);
+    _scaleController.repeat(reverse: true);
+    _rotationController.repeat(reverse: true);
+  }
+
+  @override
+  void dispose() {
+    _sidesController.dispose();
+    _scaleController.dispose();
+    _rotationController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: CustomPaint(
-          painter: Polygon(sides: 6),
-          child: SizedBox(
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.width,
-          ),
+        child: AnimatedBuilder(
+          animation: Listenable.merge([
+            _sidesAnimation,
+            _scaleAnimation,
+            _rotationAnimation,
+          ]),
+          builder: (context, child) {
+            return Transform(
+              alignment: Alignment.center,
+              transform: Matrix4.identity()
+                ..rotateX(_rotationAnimation.value)
+                ..rotateY(_rotationAnimation.value),
+              child: CustomPaint(
+                painter: Polygon(sides: _sidesAnimation.value),
+                child: SizedBox(
+                  width: _scaleAnimation.value,
+                  height: _scaleAnimation.value,
+                ),
+              ),
+            );
+          },
         ),
       ),
     );
