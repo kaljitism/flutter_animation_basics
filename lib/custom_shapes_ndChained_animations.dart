@@ -81,7 +81,8 @@ class _CustomShapesAnimationState extends State<CustomShapesAnimation>
               alignment: Alignment.center,
               transform: Matrix4.identity()
                 ..rotateX(_rotationAnimation.value)
-                ..rotateY(_rotationAnimation.value),
+                ..rotateY(_rotationAnimation.value)
+                ..rotateZ(_rotationAnimation.value),
               child: CustomPaint(
                 painter: Polygon(sides: _sidesAnimation.value),
                 child: SizedBox(
