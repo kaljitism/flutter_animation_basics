@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animation_basics/my_router.dart';
+import 'package:flutter_animation_basics/tween_color_animation.dart';
 
 void main() {
   runApp(const MyAnimationApp());
@@ -14,7 +14,7 @@ class MyAnimationApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Animation App',
       theme: ThemeData.dark(useMaterial3: true),
-      home: const MyRouter(),
+      home: const TweenColorAnimation(),
     );
   }
 }
