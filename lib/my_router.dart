@@ -4,6 +4,7 @@ import 'package:flutter_animation_basics/chained_animation.dart';
 import 'package:flutter_animation_basics/custom_shapes_ndChained_animations.dart';
 import 'package:flutter_animation_basics/hero_animation.dart';
 import 'package:flutter_animation_basics/implicit_rotateY_animation.dart';
+import 'package:flutter_animation_basics/threeD_drawer.dart';
 import 'package:flutter_animation_basics/zoom_animation.dart';
 
 class MyRouter extends StatefulWidget {
@@ -87,6 +88,17 @@ class _MyRouterState extends State<MyRouter> {
               );
             },
             title: const Text('Custom Shapes Animation'),
+          ),
+          ListTile(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const DrawerPage(),
+                ),
+              );
+            },
+            title: const Text('3D Drawer'),
           ),
         ],
       ),
