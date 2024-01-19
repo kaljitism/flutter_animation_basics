@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animation_basics/3d_cube_animation.dart';
+import 'package:flutter_animation_basics/animated_prompt.dart';
 import 'package:flutter_animation_basics/chained_animation.dart';
 import 'package:flutter_animation_basics/custom_shapes_ndChained_animations.dart';
 import 'package:flutter_animation_basics/hero_animation.dart';
@@ -99,6 +100,17 @@ class _MyRouterState extends State<MyRouter> {
               );
             },
             title: const Text('3D Drawer'),
+          ),
+          ListTile(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const AnimatedPromptPage(),
+                ),
+              );
+            },
+            title: const Text('Animated Prompt'),
           ),
         ],
       ),

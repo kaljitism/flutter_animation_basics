@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animation_basics/threeD_drawer.dart';
+import 'package:flutter_animation_basics/animated_prompt.dart';
 
 void main() {
   runApp(const MyAnimationApp());
@@ -14,7 +14,7 @@ class MyAnimationApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Animation App',
       theme: ThemeData.dark(useMaterial3: true),
-      home: const DrawerPage(),
+      home: const AnimatedPromptPage(),
     );
   }
 }
