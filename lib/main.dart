@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animation_basics/animated_prompt.dart';
+import 'package:flutter_animation_basics/3d_tunnel_animation.dart';
 
 void main() {
   runApp(const MyAnimationApp());
@@ -14,7 +14,7 @@ class MyAnimationApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Animation App',
       theme: ThemeData.dark(useMaterial3: true),
-      home: const AnimatedPromptPage(),
+      home: const ThreeDTunnel(),
     );
   }
 }

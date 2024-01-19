@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animation_basics/3d_cube_animation.dart';
+import 'package:flutter_animation_basics/3d_drawer.dart';
+import 'package:flutter_animation_basics/3d_tunnel_animation.dart';
 import 'package:flutter_animation_basics/animated_prompt.dart';
 import 'package:flutter_animation_basics/chained_animation.dart';
 import 'package:flutter_animation_basics/custom_shapes_ndChained_animations.dart';
 import 'package:flutter_animation_basics/hero_animation.dart';
 import 'package:flutter_animation_basics/implicit_rotateY_animation.dart';
-import 'package:flutter_animation_basics/threeD_drawer.dart';
 import 'package:flutter_animation_basics/zoom_animation.dart';
 
 class MyRouter extends StatefulWidget {
@@ -56,6 +57,17 @@ class _MyRouterState extends State<MyRouter> {
               );
             },
             title: const Text('3D Cube Animation'),
+          ),
+          ListTile(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const ThreeDTunnel(),
+                ),
+              );
+            },
+            title: const Text('3D Tunnel Animation'),
           ),
           ListTile(
             onTap: () {
