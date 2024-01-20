@@ -115,7 +115,7 @@ class _ThreeDTunnelState extends State<ThreeDTunnel>
         ..rotateX(_rotationAnimation.value)
         ..rotateY(_rotationAnimation.value)
         ..rotateZ(_rotationAnimation.value),
-      child: middlePointOfSide[0] != null
+      child: middlePointOfSide.isNotEmpty
           ? Transform(
               alignment: Alignment(
                 middlePointOfSide[0]!.dx,
