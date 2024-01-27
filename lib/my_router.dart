@@ -6,6 +6,7 @@ import 'package:flutter_animation_basics/3d_tunnel_animation.dart';
 import 'package:flutter_animation_basics/animated_prompt.dart';
 import 'package:flutter_animation_basics/chained_animation.dart';
 import 'package:flutter_animation_basics/custom_shapes_ndChained_animations.dart';
+import 'package:flutter_animation_basics/gen_art_animation.dart';
 import 'package:flutter_animation_basics/hero_animation.dart';
 import 'package:flutter_animation_basics/implicit_rotateY_animation.dart';
 import 'package:flutter_animation_basics/matrix_transition_animation.dart';
@@ -147,6 +148,17 @@ class _MyRouterState extends State<MyRouter> {
               );
             },
             title: const Text('Animated Prompt'),
+          ),
+          ListTile(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const GenArtAnimation(),
+                ),
+              );
+            },
+            title: const Text('Gen Art Animation'),
           ),
         ],
       ),
